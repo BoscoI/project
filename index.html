@@ -1,0 +1,87 @@
+<!DOCTYPE html> <!-- Тип документа -->
+<html lang="ru"> <!-- Корневой элемент -->
+<head> <!-- Шапка -->
+    <meta charset="UTF-8"> <!-- Кодировка -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Адаптивность -->
+    <title>Каталог - TechStore</title> <!-- Заголовок -->
+    <link rel="stylesheet" href="styles.css"> <!-- Стили -->
+</head> <!-- Конец head -->
+<body> <!-- Тело -->
+    <!-- Header -->
+    <header class="header"> <!-- Шапка сайта -->
+        <div class="container header-container"> <!-- Контейнер -->
+            <div class="logo"> <!-- Логотип -->
+                <a href="index.html"><h1>TechStore</h1></a> <!-- Ссылка на главную -->
+            </div> <!-- Конец логотипа -->
+            <nav class="nav" id="nav"> <!-- Навигация -->
+                <ul class="nav-list"> <!-- Список меню -->
+                    <li><a href="index.html" class="active">Каталог</a></li> <!-- Пункт -->
+                    <li><a href="favorites.html">Избранное <span class="badge" id="favCount">0</span></a></li> <!-- Избранное -->
+                    <li><a href="cart.html">Корзина <span class="badge" id="cartCount">0</span></a></li> <!-- Корзина -->
+                    <li><a href="profile.html">Личный кабинет</a></li> <!-- Профиль -->
+                    <li><a href="admin.html">Админ панель</a></li> <!-- Админ -->
+                    <li><a href="about.html">О нас</a></li> <!-- О нас -->
+                    <li><a href="contacts.html">Контакты</a></li> <!-- Контакты -->
+                </ul> <!-- Конец списка -->
+            </nav> <!-- Конец навигации -->
+            <button class="burger" id="burger"> <!-- Бургер -->
+                <span></span> <!-- Линия -->
+                <span></span> <!-- Линия -->
+                <span></span> <!-- Линия -->
+            </button> <!-- Конец кнопки -->
+        </div> <!-- Конец контейнера -->
+    </header> <!-- Конец header -->
+
+    <!-- Main Content -->
+    <main class="main"> <!-- Основной контент -->
+        <div class="container"> <!-- Контейнер -->
+            <div class="content-wrapper"> <!-- Обертка -->
+                <!-- Sidebar -->
+                <aside class="sidebar" id="sidebar"> <!-- Боковая панель -->
+                    <h3>Категории</h3> <!-- Заголовок -->
+                    <ul class="category-list"> <!-- Список категорий -->
+                        <li><a href="#" data-category="all" class="active">Все товары</a></li> <!-- Пункт -->
+                        <li><a href="#" data-category="phones">Сотовые телефоны</a></li> <!-- Пункт -->
+                        <li><a href="#" data-category="laptops">Ноутбуки</a></li> <!-- Пункт -->
+                        <li><a href="#" data-category="accessories">Аксессуары</a></li> <!-- Пункт -->
+                    </ul> <!-- Конец списка -->
+                    
+                    <div class="filters"> <!-- Фильтры -->
+                        <h3>Фильтры</h3> <!-- Заголовок -->
+                        <div class="filter-group"> <!-- Группа фильтра -->
+                            <label for="search">Поиск:</label> <!-- Метка -->
+                            <input type="text" id="search" placeholder="Введите название..."> <!-- Поле поиска -->
+                        </div> <!-- Конец группы -->
+                        <div class="filter-group"> <!-- Группа фильтра -->
+                            <label for="sort">Сортировка:</label> <!-- Метка -->
+                            <select id="sort"> <!-- Селект -->
+                                <option value="">По умолчанию</option> <!-- Опция -->
+                                <option value="asc">Цена: по возрастанию</option> <!-- Опция -->
+                                <option value="desc">Цена: по убыванию</option> <!-- Опция -->
+                            </select> <!-- Конец select -->
+                        </div> <!-- Конец группы -->
+                    </div> <!-- Конец фильтров -->
+                </aside> <!-- Конец sidebar -->
+
+                <!-- Content Area -->
+                <div class="content"> <!-- Контент -->
+                    <h2>Каталог товаров</h2> <!-- Заголовок -->
+                    <div class="products-grid" id="productsGrid"></div> <!-- Сетка товаров -->
+                    <div class="pagination" id="pagination"></div> <!-- Пагинация -->
+                </div> <!-- Конец контента -->
+            </div> <!-- Конец обертки -->
+        </div> <!-- Конец контейнера -->
+    </main> <!-- Конец main -->
+
+    <!-- Footer -->
+    <footer class="footer"> <!-- Подвал -->
+        <div class="container"> <!-- Контейнер -->
+            <p>&copy; 2026 TechStore. Все права защищены.</p> <!-- Копирайт -->
+        </div> <!-- Конец контейнера -->
+    </footer> <!-- Конец подвала -->
+
+    <script src="data.js"></script> <!-- Данные -->
+    <script src="catalog.js"></script> <!-- Скрипт каталога -->
+    <script src="auth.js"></script> <!-- Авторизация -->
+</body> <!-- Конец body -->
+</html> <!-- Конец документа -->
