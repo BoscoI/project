@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+   <html lang="ru">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Контакты - TechStore</title>
+       <link rel="stylesheet" href="styles.css">
+   </head>
+   <body>
+       <header class="header">
+           <div class="container header-container">
+               <div class="logo"><a href="index.html"><h1>TechStore</h1></a></div>
+               <nav class="nav" id="nav">
+                   <ul class="nav-list">
+                       <li><a href="index.html">Каталог</a></li>
+                       <li><a href="favorites.html">Избранное <span class="badge" id="favCount">0</span></a></li>
+                       <li><a href="cart.html">Корзина <span class="badge" id="cartCount">0</span></a></li>
+                       <li><a href="profile.html">Личный кабинет</a></li>
+                       <li><a href="admin.html">Админ панель</a></li>
+                       <li><a href="about.html">О нас</a></li>
+                       <li><a href="contacts.html" class="active">Контакты</a></li>
+                   </ul>
+               </nav>
+               <button class="burger" id="burger"><span></span><span></span><span></span></button>
+           </div>
+       </header>
+       <main class="main">
+           <div class="container">
+               <div class="content-wrapper-full">
+                   <div class="content">
+                       <h2>Контакты</h2>
+                       <div class="contacts-content">
+                           <div class="contact-item">
+                               <h3>Адрес:</h3>
+                               <p>г. Москва, ул. Примерная, д. 123</p>
+                           </div>
+                           <div class="contact-item">
+                               <h3>Телефон:</h3>
+                               <p><a href="tel:+74951234567">+7 (495) 123-45-67</a></p>
+                           </div>
+                           <div class="contact-item">
+                               <h3>Email:</h3>
+                               <p><a href="mailto:info@techstore.ru">info@techstore.ru</a></p>
+                           </div>
+                           <div class="contact-item">
+                               <h3>Режим работы:</h3>
+                               <p>Пн-Пт: 9:00 - 20:00<br>Сб-Вс: 10:00 - 18:00</p>
+                           </div>
+                           <div class="contact-item">
+       <h3>Написать нам:</h3>
+       <form id="contactForm" onsubmit="sendContactForm(event)">
+           <input type="text"  id="cfName"  placeholder="Ваше имя" required>
+           <input type="email" id="cfEmail" placeholder="Email"    required>
+           <textarea id="cfMsg" rows="4"   placeholder="Сообщение" required></textarea>
+           <button type="submit" class="btn btn-primary">Отправить</button>
+       </form>
+       <div id="cfResult" style="display:none;color:green">
+           ✓ Сообщение отправлено!
+       </div>
+   </div>
+
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </main>
+       <footer class="footer">
+           <div class="container"><p>&copy; 2026 TechStore. Все права защищены.</p></div>
+       </footer>
+       <script src="data.js"></script>
+       <script src="common.js"></script>
+       <script src="auth.js"></script>
+       <script>
+   function sendContactForm(e) {
+       e.preventDefault();
+       var name  = document.getElementById('cfName').value.trim();
+       var email = document.getElementById('cfEmail').value.trim();
+       var msg   = document.getElementById('cfMsg').value.trim();
+       if (!name || !email || !msg) {
+           alert('Заполните все поля'); return;
+       }
+       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+           alert('Неверный формат email'); return;
+       }
+       document.getElementById('cfResult').style.display = 'block';
+       document.getElementById('contactForm').reset();
+   }
+   </script>
+   </body>
+   </html>
