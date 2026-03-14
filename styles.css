@@ -1,0 +1,1422 @@
+﻿* { /* Универсальный селектор */
+    margin: 0; /* Сброс внешних отступов */
+    padding: 0; /* Сброс внутренних отступов */
+    box-sizing: border-box; /* Учет границ в размерах */
+} /* Конец * */
+/* Пустая строка */
+:root { /* Корневые переменные */
+    --primary-color: #2563eb; /* Основной цвет */
+    --secondary-color: #1e40af; /* Вторичный цвет */
+    --danger-color: #dc2626; /* Цвет опасности */
+    --success-color: #16a34a; /* Цвет успеха */
+    --text-color: #1f2937; /* Цвет текста */
+    --bg-color: #f3f4f6; /* Цвет фона */
+    --white: #ffffff; /* Белый */
+    --border-color: #e5e7eb; /* Цвет границ */
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Маленькая тень */
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1); /* Большая тень */
+} /* Конец :root */
+/* Пустая строка */
+body { /* Тело страницы */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; /* Шрифт */
+    line-height: 1.6; /* Межстрочный интервал */
+    color: var(--text-color); /* Цвет текста */
+    background-color: var(--bg-color); /* Фон */
+} /* Конец body */
+/* Пустая строка */
+.container { /* Контейнер */
+    max-width: 1200px; /* Максимальная ширина */
+    margin: 0 auto; /* Центрирование */
+    padding: 0 20px; /* Горизонтальные отступы */
+} /* Конец .container */
+/* Пустая строка */
+/* Header */ /* Раздел шапки */
+.header { /* Шапка */
+    background-color: var(--white); /* Фон */
+    box-shadow: var(--shadow); /* Тень */
+    position: sticky; /* Прилипание */
+    top: 0; /* Позиция сверху */
+    z-index: 100; /* Слой */
+} /* Конец .header */
+/* Пустая строка */
+.header-container { /* Контейнер шапки */
+    display: flex; /* Флекс */
+    justify-content: space-between; /* Распределение */
+    align-items: center; /* Выравнивание */
+    padding: 1rem 20px; /* Отступы */
+} /* Конец .header-container */
+/* Пустая строка */
+.logo h1 { /* Заголовок логотипа */
+    color: var(--primary-color); /* Цвет */
+    font-size: 1.5rem; /* Размер */
+} /* Конец .logo h1 */
+/* Пустая строка */
+.nav-list { /* Список навигации */
+    display: flex; /* Флекс */
+    list-style: none; /* Без маркеров */
+    gap: 2rem; /* Расстояние */
+} /* Конец .nav-list */
+/* Пустая строка */
+.nav-list a { /* Ссылки меню */
+    text-decoration: none; /* Без подчеркивания */
+    color: var(--text-color); /* Цвет текста */
+    font-weight: 500; /* Насыщенность */
+    transition: color 0.3s; /* Переход */
+    position: relative; /* Относительная позиция */
+} /* Конец .nav-list a */
+/* Пустая строка */
+.nav-list a:hover { /* Ховер ссылок */
+    color: var(--primary-color); /* Цвет при наведении */
+} /* Конец .nav-list a:hover */
+/* Пустая строка */
+.badge { /* Бейдж */
+    background-color: var(--danger-color); /* Фон */
+    color: var(--white); /* Цвет */
+    border-radius: 50%; /* Круг */
+    padding: 2px 6px; /* Отступы */
+    font-size: 0.75rem; /* Размер текста */
+    position: absolute; /* Абсолютная позиция */
+    top: -8px; /* Смещение сверху */
+    right: -10px; /* Смещение справа */
+} /* Конец .badge */
+/* Пустая строка */
+.burger { /* Кнопка бургера */
+    display: none; /* Скрыто */
+    flex-direction: column; /* Колонка */
+    gap: 4px; /* Промежуток */
+    background: none; /* Без фона */
+    border: none; /* Без рамки */
+    cursor: pointer; /* Курсор */
+    padding: 5px; /* Отступы */
+} /* Конец .burger */
+/* Пустая строка */
+.burger span { /* Полоски бургера */
+    width: 25px; /* Ширина */
+    height: 3px; /* Высота */
+    background-color: var(--text-color); /* Цвет */
+    transition: all 0.3s; /* Переход */
+} /* Конец .burger span */
+/* Пустая строка */
+.burger.active span:nth-child(1) { /* Первая полоска */
+    transform: rotate(45deg) translate(5px, 5px); /* Трансформация */
+} /* Конец .burger.active span:nth-child(1) */
+/* Пустая строка */
+.burger.active span:nth-child(2) { /* Вторая полоска */
+    opacity: 0; /* Скрываем */
+} /* Конец .burger.active span:nth-child(2) */
+/* Пустая строка */
+.burger.active span:nth-child(3) { /* Третья полоска */
+    transform: rotate(-45deg) translate(7px, -6px); /* Трансформация */
+} /* Конец .burger.active span:nth-child(3) */
+/* Пустая строка */
+/* Main Content */ /* Раздел основного контента */
+.main { /* Основной блок */
+    min-height: calc(100vh - 140px); /* Минимальная высота */
+    padding: 2rem 0; /* Отступы */
+} /* Конец .main */
+/* Пустая строка */
+.content-wrapper { /* Обертка контента */
+    display: grid; /* Сетка */
+    grid-template-columns: 280px 1fr; /* Колонки */
+    gap: 2rem; /* Промежуток */
+} /* Конец .content-wrapper */
+/* Пустая строка */
+.content-wrapper-full { /* Обертка на всю ширину */
+    display: block; /* Блочный */
+} /* Конец .content-wrapper-full */
+/* Пустая строка */
+/* Sidebar */ /* Раздел боковой панели */
+.sidebar { /* Боковая панель */
+    background-color: var(--white); /* Фон */
+    padding: 1.5rem; /* Отступы */
+    border-radius: 8px; /* Скругление */
+    box-shadow: var(--shadow); /* Тень */
+    height: fit-content; /* Высота по контенту */
+    position: sticky; /* Прилипание */
+    top: 100px; /* Смещение */
+} /* Конец .sidebar */
+/* Пустая строка */
+.sidebar h3 { /* Заголовок сайдбара */
+    margin-bottom: 1rem; /* Отступ снизу */
+    color: var(--primary-color); /* Цвет */
+} /* Конец .sidebar h3 */
+/* Пустая строка */
+.category-list { /* Список категорий */
+    list-style: none; /* Без маркеров */
+    margin-bottom: 2rem; /* Отступ снизу */
+} /* Конец .category-list */
+/* Пустая строка */
+.category-list a { /* Ссылки категорий */
+    display: block; /* Блок */
+    padding: 0.75rem; /* Отступы */
+    text-decoration: none; /* Без подчеркивания */
+    color: var(--text-color); /* Цвет */
+    border-radius: 4px; /* Скругление */
+    transition: all 0.3s; /* Переход */
+    margin-bottom: 0.5rem; /* Отступ снизу */
+} /* Конец .category-list a */
+/* Пустая строка */
+.category-list a:hover,
+.category-list a.active { /* Ховер и актив */
+    background-color: var(--primary-color); /* Фон */
+    color: var(--white); /* Цвет */
+} /* Конец .category-list a:hover, .category-list a.active */
+/* Пустая строка */
+.filters { /* Блок фильтров */
+    border-top: 1px solid var(--border-color); /* Верхняя граница */
+    padding-top: 1rem; /* Отступ сверху */
+} /* Конец .filters */
+/* Пустая строка */
+.filter-group { /* Группа фильтра */
+    margin-bottom: 1rem; /* Отступ снизу */
+} /* Конец .filter-group */
+/* Пустая строка */
+.filter-group label { /* Метка фильтра */
+    display: block; /* Блок */
+    margin-bottom: 0.5rem; /* Отступ снизу */
+    font-weight: 500; /* Насыщенность */
+} /* Конец .filter-group label */
+/* Пустая строка */
+.filter-group input,
+.filter-group select { /* Поля фильтра */
+    width: 100%; /* Ширина */
+    padding: 0.5rem; /* Отступы */
+    border: 1px solid var(--border-color); /* Граница */
+    border-radius: 4px; /* Скругление */
+    font-size: 0.9rem; /* Размер шрифта */
+} /* Конец полей фильтра */
+/* Content */ /* Раздел контента */
+.content { /* Контент */
+    background-color: var(--white); /* Фон */
+    padding: 2rem; /* Отступы */
+    border-radius: 8px; /* Скругление */
+    box-shadow: var(--shadow); /* Тень */
+} /* Конец .content */
+/* Пустая строка */
+.page { /* Страница */
+    display: none; /* Скрыто */
+} /* Конец .page */
+/* Пустая строка */
+.page.active { /* Активная страница */
+    display: block; /* Показ */
+} /* Конец .page.active */
+/* Пустая строка */
+.page h2 { /* Заголовок страницы */
+    margin-bottom: 1.5rem; /* Отступ снизу */
+    color: var(--primary-color); /* Цвет */
+} /* Конец .page h2 */
+/* Пустая строка */
+/* Products Grid */ /* Раздел товаров */
+.products-grid { /* Сетка товаров */
+    display: grid; /* Сетка */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Колонки */
+    gap: 1.5rem; /* Промежуток */
+    margin-bottom: 2rem; /* Отступ снизу */
+} /* Конец .products-grid */
+/* Пустая строка */
+.product-card { /* Карточка товара */
+    border: 1px solid var(--border-color); /* Граница */
+    border-radius: 8px; /* Скругление */
+    padding: 1rem; /* Отступы */
+    transition: all 0.3s; /* Переход */
+    position: relative; /* Относительная позиция */
+} /* Конец .product-card */
+/* Пустая строка */
+.product-card.out-of-stock { /* Нет в наличии */
+    opacity: 0.6; /* Прозрачность */
+} /* Конец .product-card.out-of-stock */
+/* Пустая строка */
+.product-card.out-of-stock::after { /* Затемнение */
+    content: ''; /* Псевдоэлемент */
+    position: absolute; /* Абсолютная позиция */
+    top: 0; /* Сверху */
+    left: 0; /* Слева */
+    right: 0; /* Справа */
+    bottom: 0; /* Снизу */
+    background: rgba(255, 255, 255, 0.7); /* Фон */
+    pointer-events: none; /* Без кликов */
+    border-radius: 8px; /* Скругление */
+} /* Конец .product-card.out-of-stock::after */
+/* Пустая строка */
+.product-card:hover { /* Ховер карточки */
+    box-shadow: var(--shadow-lg); /* Тень */
+    transform: translateY(-5px); /* Подъем */
+} /* Конец .product-card:hover */
+/* Пустая строка */
+.product-image { /* Изображение товара */
+    width: 100%; /* Ширина */
+    height: 200px; /* Высота */
+    object-fit: cover; /* Обрезка */
+    border-radius: 4px; /* Скругление */
+    margin-bottom: 1rem; /* Отступ снизу */
+    background-color: var(--bg-color); /* Фон */
+    display: flex; /* Флекс */
+    align-items: center; /* Выравнивание */
+    justify-content: center; /* Центровка */
+    font-size: 3rem; /* Размер */
+} /* Конец .product-image */
+/* Пустая строка */
+.product-category { /* Категория товара */
+    font-size: 0.75rem; /* Размер */
+    color: var(--primary-color); /* Цвет */
+    text-transform: uppercase; /* Верхний регистр */
+    font-weight: 600; /* Насыщенность */
+    margin-bottom: 0.5rem; /* Отступ снизу */
+} /* Конец .product-category */
+/* Пустая строка */
+.product-name { /* Название товара */
+    font-size: 1rem; /* Размер */
+    font-weight: 600; /* Насыщенность */
+    margin-bottom: 0.5rem; /* Отступ снизу */
+    color: var(--text-color); /* Цвет */
+} /* Конец .product-name */
+/* Пустая строка */
+.product-price { /* Цена товара */
+    font-size: 1.25rem; /* Размер */
+    font-weight: 700; /* Насыщенность */
+    color: var(--primary-color); /* Цвет */
+    margin-bottom: 0.5rem; /* Отступ снизу */
+} /* Конец .product-price */
+/* Пустая строка */
+.product-stock { /* Остаток товара */
+    font-size: 0.85rem; /* Размер */
+    font-weight: 600; /* Насыщенность */
+    margin-bottom: 0.75rem; /* Отступ снизу */
+    color: var(--success-color); /* Цвет */
+} /* Конец .product-stock */
+/* Пустая строка */
+.product-stock.low-stock { /* Мало товара */
+    color: #f59e0b; /* Цвет */
+} /* Конец .product-stock.low-stock */
+/* Пустая строка */
+.product-actions { /* Действия */
+    display: flex; /* Флекс */
+    gap: 0.5rem; /* Промежуток */
+} /* Конец .product-actions */
+/* Пустая строка */
+.btn { /* Кнопка */
+    padding: 0.5rem 1rem; /* Отступы */
+    border: none; /* Без границы */
+    border-radius: 8px; /* Скругление */
+    cursor: pointer; /* Курсор */
+    font-size: 0.9rem; /* Размер */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Переход */
+    flex: 1; /* Растяжение */
+    display: flex; /* Флекс */
+    align-items: center; /* Выравнивание */
+    justify-content: center; /* Центровка */
+    gap: 0.5rem; /* Промежуток */
+    position: relative; /* Относительная позиция */
+    z-index: 1; /* Слой */
+} /* Конец .btn */
+/* Пустая строка */
+.btn-primary { /* Основная кнопка */
+    background-color: var(--primary-color); /* Фон */
+    color: var(--white); /* Цвет */
+    text-decoration: none; /* Без подчеркивания */
+} /* Конец .btn-primary */
+/* Пустая строка */
+.btn-primary:hover { /* Ховер кнопки */
+    background-color: var(--secondary-color); /* Фон */
+} /* Конец .btn-primary:hover */
+/* Пустая строка */
+.btn-favorite { /* Кнопка избранного */
+    background: linear-gradient(135deg, #ffe5e5 0%, #ffcccc 100%); /* Фон */
+    color: var(--danger-color); /* Цвет */
+    border: none; /* Без границы */
+    padding: 0; /* Без отступов */
+    flex: 0; /* Без растяжения */
+    width: 50px; /* Ширина */
+    height: 50px; /* Высота */
+    font-size: 1.8rem; /* Размер */
+    box-shadow: 0 2px 8px rgba(220, 38, 38, 0.15); /* Тень */
+    position: relative; /* Относительная позиция */
+    display: flex; /* Флекс */
+    align-items: center; /* Выравнивание */
+    justify-content: center; /* Центровка */
+    cursor: pointer; /* Курсор */
+    border-radius: 50%; /* Круг */
+    line-height: 1; /* Высота строки */
+} /* Конец .btn-favorite */
+/* Пустая строка */
+.btn-favorite::before { /* Подложка */
+    content: ''; /* Псевдоэлемент */
+    position: absolute; /* Абсолютная позиция */
+    top: 50%; /* Сверху */
+    left: 50%; /* Слева */
+    width: 0; /* Ширина */
+    height: 0; /* Высота */
+    border-radius: 50%; /* Круг */
+    background: rgba(220, 38, 38, 0.2); /* Фон */
+    transform: translate(-50%, -50%); /* Центровка */
+    transition: width 0.6s, height 0.6s; /* Переход */
+    z-index: -1; /* Слой */
+} /* Конец .btn-favorite::before */
+/* Пустая строка */
+.btn-favorite:hover::before { /* Ховер подложки */
+    width: 100px; /* Ширина */
+    height: 100px; /* Высота */
+} /* Конец .btn-favorite:hover::before */
+/* Пустая строка */
+.btn-favorite:hover { /* Ховер избранного */
+    background: linear-gradient(135deg, #ffb3b3 0%, #ff9999 100%); /* Фон */
+    transform: scale(1.1); /* Увеличение */
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3); /* Тень */
+} /* Конец .btn-favorite:hover */
+/* Пустая строка */
+.btn-favorite.active { /* Активная */
+    background: linear-gradient(135deg, var(--danger-color) 0%, #ef4444 100%); /* Фон */
+    color: var(--white); /* Цвет */
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.5); /* Тень */
+    animation: heartbeat 0.3s ease-in-out; /* Анимация */
+} /* Конец .btn-favorite.active */
+/* Пустая строка */
+@keyframes heartbeat { /* Анимация сердцебиения */
+    0%, 100% { transform: scale(1); } /* Крайние точки */
+    25% { transform: scale(1.2); } /* 25% */
+    50% { transform: scale(1.1); } /* 50% */
+    75% { transform: scale(1.15); } /* 75% */
+} /* Конец @keyframes */
+/* Пустая строка */
+.btn-favorite.active:hover { /* Ховер активной */
+    background: linear-gradient(135deg, #dc2626 0%, #f87171 100%); /* Фон */
+    transform: scale(1.1); /* Увеличение */
+} /* Конец .btn-favorite.active:hover */
+/* Пустая строка */
+.btn-cart { /* Кнопка корзины */
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); /* Фон */
+    color: var(--primary-color); /* Цвет */
+    border: none; /* Без границы */
+    padding: 0; /* Без отступов */
+    flex: 0; /* Без растяжения */
+    width: 50px; /* Ширина */
+    height: 50px; /* Высота */
+    font-size: 1.8rem; /* Размер */
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.15); /* Тень */
+    font-weight: 600; /* Насыщенность */
+    position: relative; /* Относительная позиция */
+    display: flex; /* Флекс */
+    align-items: center; /* Выравнивание */
+    justify-content: center; /* Центровка */
+    cursor: pointer; /* Курсор */
+    border-radius: 50%; /* Круг */
+    line-height: 1; /* Высота строки */
+} /* Конец .btn-cart */
+/* Пустая строка */
+.btn-cart::after { /* Подложка */
+    content: ''; /* Псевдоэлемент */
+    position: absolute; /* Абсолютная позиция */
+    top: 50%; /* Сверху */
+    left: 50%; /* Слева */
+    width: 0; /* Ширина */
+    height: 0; /* Высота */
+    border-radius: 50%; /* Круг */
+    background: rgba(37, 99, 235, 0.2); /* Фон */
+    transform: translate(-50%, -50%); /* Центровка */
+    transition: width 0.6s, height 0.6s; /* Переход */
+    z-index: -1; /* Слой */
+} /* Конец .btn-cart::after */
+/* Пустая строка */
+.btn-cart:hover::after { /* Ховер подложки */
+    width: 100px; /* Ширина */
+    height: 100px; /* Высота */
+} /* Конец .btn-cart:hover::after */
+/* Пустая строка */
+.btn-cart:hover { /* Ховер корзины */
+    background: linear-gradient(135deg, #93c5fd 0%, #60a5fa 100%); /* Фон */
+    transform: scale(1.1); /* Увеличение */
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3); /* Тень */
+} /* Конец .btn-cart:hover */
+/* Пустая строка */
+.btn-cart.active { /* Активная корзина */
+    background: linear-gradient(135deg, var(--success-color) 0%, #059669 100%); /* Фон */
+    color: var(--white); /* Цвет */
+    box-shadow: 0 4px 12px rgba(22, 163, 74, 0.5); /* Тень */
+    animation: cartAdd 0.4s ease-in-out; /* Анимация */
+} /* Конец .btn-cart.active */
+/* Пустая строка */
+.btn-cart[disabled],
+.btn-cart:disabled { /* Отключенная корзина */
+    background: #d1d5db; /* Фон */
+    cursor: not-allowed; /* Курсор */
+    opacity: 0.6; /* Прозрачность */
+} /* Конец disabled */
+/* Пустая строка */
+.btn-cart[disabled]:hover,
+.btn-cart:disabled:hover { /* Ховер отключенной */
+    background: #d1d5db; /* Фон */
+    transform: none; /* Без трансформации */
+    box-shadow: none; /* Без тени */
+} /* Конец disabled:hover */
+/* Пустая строка */
+.btn-cart[disabled]::after,
+.btn-cart:disabled::after { /* Подложка отключенной */
+    display: none; /* Скрыть */
+} /* Конец disabled::after */
+/* Пустая строка */
+@keyframes cartAdd { /* Анимация добавления */
+    0% { transform: scale(1); } /* Старт */
+    50% { transform: scale(1.05) rotate(2deg); } /* Середина */
+    100% { transform: scale(1); } /* Конец */
+} /* Конец @keyframes cartAdd */
+/* Пустая строка */
+.btn-cart.active:hover { /* Ховер активной */
+    background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%); /* Фон */
+    transform: scale(1.1); /* Увеличение */
+    box-shadow: 0 4px 12px rgba(22, 163, 74, 0.4); /* Тень */
+} /* Конец .btn-cart.active:hover */
+/* Пустая строка */
+/* Pagination */ /* Раздел пагинации */
+.pagination { /* Пагинация */
+    display: flex; /* Флекс */
+    justify-content: center; /* Центровка */
+    gap: 0.5rem; /* Промежуток */
+    margin-top: 2rem; /* Отступ сверху */
+} /* Конец .pagination */
+/* Пустая строка */
+.pagination button { /* Кнопки пагинации */
+    padding: 0.5rem 1rem; /* Отступы */
+    border: 1px solid var(--border-color); /* Граница */
+    background-color: var(--white); /* Фон */
+    cursor: pointer; /* Курсор */
+    border-radius: 4px; /* Скругление */
+    transition: all 0.3s; /* Переход */
+} /* Конец .pagination button */
+/* Пустая строка */
+.pagination button:hover:not(:disabled) { /* Ховер */
+    background-color: var(--primary-color); /* Фон */
+    color: var(--white); /* Цвет */
+    border-color: var(--primary-color); /* Цвет границы */
+} /* Конец .pagination button:hover:not(:disabled) */
+/* Пустая строка */
+.pagination button.active { /* Активная кнопка */
+    background-color: var(--primary-color); /* Фон */
+    color: var(--white); /* Цвет */
+    border-color: var(--primary-color); /* Цвет границы */
+} /* Конец .pagination button.active */
+/* Пустая строка */
+.pagination button:disabled { /* Отключенная */
+    opacity: 0.5; /* Прозрачность */
+    cursor: not-allowed; /* Курсор */
+} /* Конец .pagination button:disabled */
+/* Пустая строка */
+/* Cart Table */ /* Раздел корзины */
+.cart-container { /* Контейнер таблицы */
+    overflow-x: auto; /* Горизонтальная прокрутка */
+} /* Конец .cart-container */
+/* Пустая строка */
+.cart-table { /* Таблица корзины */
+    width: 100%; /* Ширина */
+    border-collapse: collapse; /* Схлопывание */
+    margin-bottom: 2rem; /* Отступ снизу */
+} /* Конец .cart-table */
+/* Пустая строка */
+.cart-table th,
+.cart-table td { /* Ячейки */
+    padding: 1rem; /* Отступы */
+    text-align: left; /* Выравнивание */
+    border-bottom: 1px solid var(--border-color); /* Граница */
+} /* Конец ячеек */
+/* Пустая строка */
+.cart-table th { /* Заголовки */
+    background-color: var(--bg-color); /* Фон */
+    font-weight: 600; /* Насыщенность */
+} /* Конец .cart-table th */
+/* Пустая строка */
+.cart-table td { /* Ячейки */
+    vertical-align: middle; /* Выравнивание */
+} /* Конец .cart-table td */
+/* Пустая строка */
+.quantity-controls { /* Контролы количества */
+    display: flex; /* Флекс */
+    align-items: center; /* Выравнивание */
+    gap: 0.5rem; /* Промежуток */
+} /* Конец .quantity-controls */
+/* Пустая строка */
+.quantity-controls button { /* Кнопки количества */
+    width: 30px; /* Ширина */
+    height: 30px; /* Высота */
+    border: 1px solid var(--border-color); /* Граница */
+    background-color: var(--white); /* Фон */
+    cursor: pointer; /* Курсор */
+    border-radius: 4px; /* Скругление */
+    font-weight: 600; /* Насыщенность */
+} /* Конец .quantity-controls button */
+/* Пустая строка */
+.quantity-controls button:hover { /* Ховер кнопок */
+    background-color: var(--primary-color); /* Фон */
+    color: var(--white); /* Цвет */
+} /* Конец .quantity-controls button:hover */
+/* Пустая строка */
+.quantity-controls span { /* Значение количества */
+    min-width: 40px; /* Минимальная ширина */
+    text-align: center; /* Выравнивание */
+} /* Конец .quantity-controls span */
+/* Пустая строка */
+.btn-remove { /* Кнопка удалить */
+    background-color: var(--danger-color); /* Фон */
+    color: var(--white); /* Цвет */
+    padding: 0.5rem 1rem; /* Отступы */
+} /* Конец .btn-remove */
+/* Пустая строка */
+.btn-remove:hover { /* Ховер удаления */
+    background-color: #b91c1c; /* Фон */
+} /* Конец .btn-remove:hover */
+/* Пустая строка */
+.cart-total { /* Итог корзины */
+    text-align: right; /* Выравнивание */
+    padding: 1rem; /* Отступы */
+    background-color: var(--bg-color); /* Фон */
+    border-radius: 8px; /* Скругление */
+} /* Конец .cart-total */
+/* Пустая строка */
+.cart-total h3 { /* Заголовок итога */
+    margin-bottom: 1rem; /* Отступ снизу */
+    color: var(--primary-color); /* Цвет */
+} /* Конец .cart-total h3 */
+/* Пустая строка */
+.empty-message { /* Пустое сообщение */
+    text-align: center; /* Выравнивание */
+    color: #6b7280; /* Цвет */
+    padding: 2rem; /* Отступы */
+    font-size: 1.1rem; /* Размер */
+} /* Конец .empty-message */
+/* About & Contacts */ /* Раздел о нас и контакты */
+.about-content,
+.contacts-content { /* Блоки контента */
+    line-height: 1.8; /* Межстрочный интервал */
+} /* Конец блоков */
+/* Пустая строка */
+.about-content ul,
+.contacts-content ul { /* Списки */
+    margin: 1rem 0 1rem 2rem; /* Отступы */
+} /* Конец списков */
+/* Пустая строка */
+.about-content li { /* Пункты о нас */
+    margin-bottom: 0.5rem; /* Отступ снизу */
+} /* Конец .about-content li */
+/* Пустая строка */
+.contact-item { /* Элемент контактов */
+    margin-bottom: 1.5rem; /* Отступ снизу */
+} /* Конец .contact-item */
+/* Пустая строка */
+.contact-item h3 { /* Заголовок контакта */
+    color: var(--primary-color); /* Цвет */
+    margin-bottom: 0.5rem; /* Отступ снизу */
+} /* Конец .contact-item h3 */
+/* Пустая строка */
+.contact-item a { /* Ссылка контакта */
+    color: var(--primary-color); /* Цвет */
+    text-decoration: none; /* Без подчеркивания */
+} /* Конец .contact-item a */
+/* Пустая строка */
+.contact-item a:hover { /* Ховер ссылки */
+    text-decoration: underline; /* Подчеркивание */
+} /* Конец .contact-item a:hover */
+/* Пустая строка */
+/* Profile & Admin Styles */ /* Профиль и админ */
+.profile-content,
+.admin-content { /* Контент профиля и админа */
+    padding: 1rem 0; /* Отступы */
+} /* Конец блоков */
+/* Пустая строка */
+.profile-section { /* Раздел профиля */
+    margin-bottom: 3rem; /* Отступ снизу */
+    padding-bottom: 2rem; /* Отступ снизу */
+    border-bottom: 2px solid var(--border-color); /* Граница */
+} /* Конец .profile-section */
+/* Пустая строка */
+.profile-section:last-child { /* Последний раздел */
+    border-bottom: none; /* Без границы */
+} /* Конец .profile-section:last-child */
+/* Пустая строка */
+.profile-section h3 { /* Заголовок раздела */
+    color: var(--primary-color); /* Цвет */
+    margin-bottom: 1.5rem; /* Отступ снизу */
+} /* Конец .profile-section h3 */
+/* Пустая строка */
+.order-item { /* Карточка заказа */
+    background-color: var(--bg-color); /* Фон */
+    padding: 1.5rem; /* Отступы */
+    border-radius: 8px; /* Скругление */
+    margin-bottom: 1.5rem; /* Отступ снизу */
+} /* Конец .order-item */
+/* Пустая строка */
+.order-header { /* Заголовок заказа */
+    display: flex; /* Флекс */
+    justify-content: space-between; /* Распределение */
+    align-items: center; /* Выравнивание */
+    margin-bottom: 1rem; /* Отступ снизу */
+    padding-bottom: 0.5rem; /* Отступ снизу */
+    border-bottom: 1px solid var(--border-color); /* Граница */
+} /* Конец .order-header */
+/* Пустая строка */
+.order-header h4 { /* Заголовок заказа */
+    color: var(--primary-color); /* Цвет */
+    margin: 0; /* Сброс отступов */
+} /* Конец .order-header h4 */
+/* Пустая строка */
+.order-meta { /* Метаданные заказа */
+    display: flex; /* Флекс */
+    align-items: center; /* Выравнивание */
+    gap: 1rem; /* Промежуток */
+} /* Конец .order-meta */
+/* Пустая строка */
+.order-date { /* Дата заказа */
+    color: #6b7280; /* Цвет */
+    font-size: 0.9rem; /* Размер */
+} /* Конец .order-date */
+/* Пустая строка */
+.order-status { /* Статус заказа */
+    padding: 0.25rem 0.75rem; /* Отступы */
+    border-radius: 12px; /* Скругление */
+    font-size: 0.85rem; /* Размер */
+    font-weight: 600; /* Насыщенность */
+} /* Конец .order-status */
+/* Пустая строка */
+.order-table { /* Таблица заказа */
+    width: 100%; /* Ширина */
+    border-collapse: collapse; /* Схлопывание */
+    margin-bottom: 1rem; /* Отступ снизу */
+    font-size: 0.9rem; /* Размер */
+} /* Конец .order-table */
+/* Пустая строка */
+.order-table th,
+.order-table td { /* Ячейки заказа */
+    padding: 0.5rem; /* Отступы */
+    text-align: left; /* Выравнивание */
+    border-bottom: 1px solid var(--border-color); /* Граница */
+} /* Конец ячеек */
+/* Пустая строка */
+.order-table th { /* Заголовки */
+    background-color: var(--white); /* Фон */
+    font-weight: 600; /* Насыщенность */
+} /* Конец .order-table th */
+/* Пустая строка */
+.order-total { /* Итог заказа */
+    text-align: right; /* Выравнивание */
+    padding-top: 0.5rem; /* Отступ сверху */
+    color: var(--primary-color); /* Цвет */
+} /* Конец .order-total */
+/* Пустая строка */
+.product-card-mini { /* Мини карточка */
+    border: 1px solid var(--border-color); /* Граница */
+    border-radius: 8px; /* Скругление */
+    padding: 1rem; /* Отступы */
+    text-align: center; /* Выравнивание */
+} /* Конец .product-card-mini */
+/* Пустая строка */
+.product-image-mini { /* Мини изображение */
+    font-size: 2rem; /* Размер */
+    margin-bottom: 0.5rem; /* Отступ снизу */
+} /* Конец .product-image-mini */
+/* Пустая строка */
+.product-card-mini h4 { /* Заголовок мини-карточки */
+    font-size: 0.9rem; /* Размер */
+    margin: 0.5rem 0; /* Отступы */
+    color: var(--text-color); /* Цвет */
+} /* Конец .product-card-mini h4 */
+/* Пустая строка */
+.cart-summary { /* Сводка корзины */
+    list-style: none; /* Без маркеров */
+    margin-bottom: 1rem; /* Отступ снизу */
+} /* Конец .cart-summary */
+/* Пустая строка */
+.cart-summary li { /* Строка сводки */
+    display: flex; /* Флекс */
+    justify-content: space-between; /* Распределение */
+    padding: 0.75rem; /* Отступы */
+    background-color: var(--bg-color); /* Фон */
+    margin-bottom: 0.5rem; /* Отступ снизу */
+    border-radius: 4px; /* Скругление */
+} /* Конец .cart-summary li */
+/* Пустая строка */
+.cart-summary-total { /* Итог сводки */
+    text-align: right; /* Выравнивание */
+    padding: 1rem; /* Отступы */
+    background-color: var(--bg-color); /* Фон */
+    border-radius: 4px; /* Скругление */
+    color: var(--primary-color); /* Цвет */
+} /* Конец .cart-summary-total */
+/* Admin Styles */ /* Стили админки */
+.category-section { /* Секция категории */
+    margin-bottom: 3rem; /* Отступ снизу */
+    padding-bottom: 2rem; /* Отступ снизу */
+    border-bottom: 2px solid var(--border-color); /* Граница */
+} /* Конец .category-section */
+/* Пустая строка */
+.category-section:last-child { /* Последняя секция */
+    border-bottom: none; /* Без границы */
+} /* Конец .category-section:last-child */
+/* Пустая строка */
+.category-section h3 { /* Заголовок секции */
+    color: var(--primary-color); /* Цвет */
+    margin-bottom: 1rem; /* Отступ снизу */
+} /* Конец .category-section h3 */
+/* Пустая строка */
+.admin-stats { /* Статистика админки */
+    display: grid; /* Сетка */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Колонки */
+    gap: 1.5rem; /* Промежуток */
+    margin-bottom: 2rem; /* Отступ снизу */
+} /* Конец .admin-stats */
+/* Пустая строка */
+.stat-card { /* Карточка статистики */
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); /* Фон */
+    color: var(--white); /* Цвет */
+    padding: 1.5rem; /* Отступы */
+    border-radius: 8px; /* Скругление */
+    text-align: center; /* Выравнивание */
+    box-shadow: var(--shadow-lg); /* Тень */
+} /* Конец .stat-card */
+/* Пустая строка */
+.stat-card.warning { /* Предупреждение */
+    background: linear-gradient(135deg, #f59e0b, #d97706); /* Фон */
+} /* Конец .stat-card.warning */
+/* Пустая строка */
+.stat-card.danger { /* Опасность */
+    background: linear-gradient(135deg, var(--danger-color), #b91c1c); /* Фон */
+} /* Конец .stat-card.danger */
+/* Пустая строка */
+.stat-card h3 { /* Заголовок карточки */
+    font-size: 0.9rem; /* Размер */
+    margin-bottom: 0.5rem; /* Отступ снизу */
+    opacity: 0.9; /* Прозрачность */
+} /* Конец .stat-card h3 */
+/* Пустая строка */
+.stat-value { /* Значение статистики */
+    font-size: 2.5rem; /* Размер */
+    font-weight: 700; /* Насыщенность */
+    margin: 0; /* Сброс отступов */
+} /* Конец .stat-value */
+/* Пустая строка */
+.admin-table-container { /* Контейнер таблицы */
+    overflow-x: auto; /* Прокрутка */
+    background-color: var(--white); /* Фон */
+    border-radius: 8px; /* Скругление */
+} /* Конец .admin-table-container */
+/* Пустая строка */
+.admin-table { /* Таблица админки */
+    width: 100%; /* Ширина */
+    border-collapse: collapse; /* Схлопывание */
+    min-width: 800px; /* Минимальная ширина */
+} /* Конец .admin-table */
+/* Пустая строка */
+.admin-table th,
+.admin-table td { /* Ячейки админки */
+    padding: 1rem; /* Отступы */
+    text-align: left; /* Выравнивание */
+    border-bottom: 1px solid var(--border-color); /* Граница */
+} /* Конец ячеек */
+/* Пустая строка */
+.admin-table th { /* Заголовки таблицы */
+    background-color: var(--primary-color); /* Фон */
+    color: var(--white); /* Цвет */
+    font-weight: 600; /* Насыщенность */
+    position: sticky; /* Прилипание */
+    top: 0; /* Смещение */
+} /* Конец .admin-table th */
+/* Пустая строка */
+.admin-table tbody tr:hover { /* Ховер строки */
+    background-color: var(--bg-color); /* Фон */
+} /* Конец .admin-table tbody tr:hover */
+/* Пустая строка */
+.admin-table td:nth-child(4),
+.admin-table td:nth-child(5),
+.admin-table td:nth-child(6),
+.admin-table td:nth-child(7),
+.admin-table td:nth-child(8) { /* Центр ячеек */
+    text-align: center; /* Центр */
+} /* Конец .admin-table td:nth-child */
+/* Пустая строка */
+.admin-table th:nth-child(4),
+.admin-table th:nth-child(5),
+.admin-table th:nth-child(6),
+.admin-table th:nth-child(7),
+.admin-table th:nth-child(8) { /* Центр заголовков */
+    text-align: center; /* Центр */
+} /* Конец .admin-table th:nth-child */
+/* Footer */ /* Раздел подвала */
+.footer { /* Подвал */
+    background-color: var(--text-color); /* Фон */
+    color: var(--white); /* Цвет */
+    text-align: center; /* Выравнивание */
+    padding: 1.5rem 0; /* Отступы */
+    margin-top: 2rem; /* Отступ сверху */
+} /* Конец .footer */
+/* Пустая строка */
+/* Checkout Page */ /* Раздел оформления */
+.checkout-container { /* Контейнер оформления */
+    display: grid; /* Сетка */
+    grid-template-columns: 1fr 400px; /* Колонки */
+    gap: 2rem; /* Промежуток */
+    margin-top: 1rem; /* Отступ сверху */
+} /* Конец .checkout-container */
+/* Пустая строка */
+.checkout-form-section h3 { /* Заголовки формы */
+    color: var(--primary-color); /* Цвет */
+    margin: 1.5rem 0 1rem; /* Отступы */
+    padding-top: 1rem; /* Отступ сверху */
+    border-top: 1px solid var(--border-color); /* Граница */
+} /* Конец .checkout-form-section h3 */
+/* Пустая строка */
+.checkout-form-section h3:first-of-type { /* Первый заголовок */
+    margin-top: 0; /* Без отступа */
+    padding-top: 0; /* Без отступа */
+    border-top: none; /* Без границы */
+} /* Конец .checkout-form-section h3:first-of-type */
+/* Пустая строка */
+.checkout-form { /* Форма */
+    background-color: var(--white); /* Фон */
+} /* Конец .checkout-form */
+/* Пустая строка */
+.form-group { /* Группа формы */
+    margin-bottom: 1.5rem; /* Отступ снизу */
+} /* Конец .form-group */
+/* Пустая строка */
+.form-group label { /* Метка формы */
+    display: block; /* Блок */
+    margin-bottom: 0.5rem; /* Отступ снизу */
+    font-weight: 500; /* Насыщенность */
+    color: var(--text-color); /* Цвет */
+} /* Конец .form-group label */
+/* Пустая строка */
+.form-group input,
+.form-group textarea,
+.form-group select { /* Поля формы */
+    width: 100%; /* Ширина */
+    padding: 0.75rem; /* Отступы */
+    border: 1px solid var(--border-color); /* Граница */
+    border-radius: 8px; /* Скругление */
+    font-size: 1rem; /* Размер */
+    font-family: inherit; /* Наследование шрифта */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Переход */
+} /* Конец полей */
+/* Пустая строка */
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus { /* Фокус */
+    outline: none; /* Без обводки */
+    border-color: var(--primary-color); /* Цвет границы */
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1); /* Тень */
+} /* Конец фокуса */
+/* Пустая строка */
+.form-row { /* Ряд формы */
+    display: grid; /* Сетка */
+    grid-template-columns: 1fr 1fr; /* Колонки */
+    gap: 1rem; /* Промежуток */
+} /* Конец .form-row */
+/* Пустая строка */
+.radio-group { /* Группа радио */
+    display: flex; /* Флекс */
+    flex-direction: column; /* Колонка */
+    gap: 0.75rem; /* Промежуток */
+} /* Конец .radio-group */
+/* Пустая строка */
+.radio-label { /* Метка радио */
+    display: flex; /* Флекс */
+    align-items: center; /* Выравнивание */
+    padding: 0.75rem; /* Отступы */
+    border: 1px solid var(--border-color); /* Граница */
+    border-radius: 8px; /* Скругление */
+    cursor: pointer; /* Курсор */
+    transition: all 0.3s; /* Переход */
+} /* Конец .radio-label */
+/* Пустая строка */
+.radio-label:hover { /* Ховер метки */
+    border-color: var(--primary-color); /* Цвет границы */
+    background-color: rgba(37, 99, 235, 0.05); /* Фон */
+} /* Конец .radio-label:hover */
+/* Пустая строка */
+.radio-label input[type="radio"] { /* Радио input */
+    width: auto; /* Авто ширина */
+    margin-right: 0.75rem; /* Отступ справа */
+    cursor: pointer; /* Курсор */
+} /* Конец radio input */
+/* Пустая строка */
+.radio-label input[type="radio"]:checked + span { /* Выбранный */
+    color: var(--primary-color); /* Цвет */
+    font-weight: 600; /* Насыщенность */
+} /* Конец checked */
+/* Пустая строка */
+.form-actions { /* Действия формы */
+    display: flex; /* Флекс */
+    gap: 1rem; /* Промежуток */
+    margin-top: 2rem; /* Отступ сверху */
+    padding-top: 1.5rem; /* Отступ сверху */
+    border-top: 2px solid var(--border-color); /* Граница */
+} /* Конец .form-actions */
+/* Пустая строка */
+.btn-secondary { /* Вторичная кнопка */
+    background-color: var(--white); /* Фон */
+    color: var(--text-color); /* Цвет */
+    border: 1px solid var(--border-color); /* Граница */
+} /* Конец .btn-secondary */
+/* Пустая строка */
+.btn-secondary:hover { /* Ховер вторичной */
+    background-color: var(--bg-color); /* Фон */
+} /* Конец .btn-secondary:hover */
+/* Пустая строка */
+.checkout-summary { /* Сводка заказа */
+    background-color: var(--bg-color); /* Фон */
+    padding: 1.5rem; /* Отступы */
+    border-radius: 8px; /* Скругление */
+    height: fit-content; /* Высота */
+    position: sticky; /* Прилипание */
+    top: 100px; /* Смещение */
+} /* Конец .checkout-summary */
+/* Пустая строка */
+.checkout-summary h3 { /* Заголовок сводки */
+    color: var(--primary-color); /* Цвет */
+    margin-bottom: 1.5rem; /* Отступ снизу */
+} /* Конец .checkout-summary h3 */
+/* Пустая строка */
+.order-summary { /* Список позиций */
+    margin-bottom: 1.5rem; /* Отступ снизу */
+} /* Конец .order-summary */
+/* Пустая строка */
+.summary-item { /* Позиция сводки */
+    display: flex; /* Флекс */
+    justify-content: space-between; /* Распределение */
+    align-items: flex-start; /* Выравнивание */
+    padding: 1rem; /* Отступы */
+    background-color: var(--white); /* Фон */
+    border-radius: 8px; /* Скругление */
+    margin-bottom: 0.75rem; /* Отступ снизу */
+} /* Конец .summary-item */
+/* Пустая строка */
+.summary-item-info { /* Инфо позиции */
+    display: flex; /* Флекс */
+    gap: 0.75rem; /* Промежуток */
+    flex: 1; /* Растяжение */
+} /* Конец .summary-item-info */
+/* Пустая строка */
+.summary-item-emoji { /* Иконка */
+    font-size: 2rem; /* Размер */
+} /* Конец .summary-item-emoji */
+/* Пустая строка */
+.summary-item-name { /* Название позиции */
+    font-weight: 600; /* Насыщенность */
+    margin-bottom: 0.25rem; /* Отступ снизу */
+} /* Конец .summary-item-name */
+/* Пустая строка */
+.summary-item-quantity { /* Количество */
+    font-size: 0.875rem; /* Размер */
+    color: #6b7280; /* Цвет */
+} /* Конец .summary-item-quantity */
+/* Пустая строка */
+.summary-item-price { /* Цена позиции */
+    font-weight: 700; /* Насыщенность */
+    color: var(--primary-color); /* Цвет */
+} /* Конец .summary-item-price */
+/* Пустая строка */
+.summary-total { /* Итоги */
+    border-top: 2px solid var(--border-color); /* Граница */
+    padding-top: 1rem; /* Отступ сверху */
+} /* Конец .summary-total */
+/* Пустая строка */
+.summary-row { /* Строка итога */
+    display: flex; /* Флекс */
+    justify-content: space-between; /* Распределение */
+    padding: 0.5rem 0; /* Отступы */
+    font-size: 1rem; /* Размер */
+} /* Конец .summary-row */
+/* Пустая строка */
+.summary-row.total { /* Итоговая строка */
+    font-size: 1.25rem; /* Размер */
+    font-weight: 700; /* Насыщенность */
+    color: var(--primary-color); /* Цвет */
+    padding-top: 1rem; /* Отступ сверху */
+    border-top: 1px solid var(--border-color); /* Граница */
+} /* Конец .summary-row.total */
+/* Responsive */ /* Адаптивность */
+@media (max-width: 1024px) { /* До 1024px */
+    .content-wrapper { /* Обертка */
+        grid-template-columns: 1fr; /* Одна колонка */
+    } /* Конец .content-wrapper */
+    .sidebar { /* Боковая панель */
+        position: static; /* Статичная */
+    } /* Конец .sidebar */
+    .checkout-container { /* Контейнер оформления */
+        grid-template-columns: 1fr; /* Одна колонка */
+    } /* Конец .checkout-container */
+    .checkout-summary { /* Сводка */
+        position: static; /* Статичная */
+    } /* Конец .checkout-summary */
+} /* Конец @media 1024px */
+/* Пустая строка */
+@media (max-width: 768px) { /* До 768px */
+    .burger { /* Бургер */
+        display: flex; /* Показываем */
+    } /* Конец .burger */
+    .nav { /* Навигация */
+        position: absolute; /* Абсолютная */
+        top: 100%; /* Ниже шапки */
+        left: 0; /* Слева */
+        right: 0; /* Справа */
+        background-color: var(--white); /* Фон */
+        box-shadow: var(--shadow); /* Тень */
+        max-height: 0; /* Скрыто */
+        overflow: hidden; /* Скрытие */
+        transition: max-height 0.3s; /* Переход */
+    } /* Конец .nav */
+    .nav.active { /* Активная навигация */
+        max-height: 500px; /* Высота */
+    } /* Конец .nav.active */
+    .nav-list { /* Список */
+        flex-direction: column; /* Колонка */
+        padding: 1rem; /* Отступы */
+        gap: 0; /* Без промежутка */
+    } /* Конец .nav-list */
+    .nav-list li { /* Пункты */
+        border-bottom: 1px solid var(--border-color); /* Граница */
+    } /* Конец .nav-list li */
+    .nav-list a { /* Ссылки */
+        display: block; /* Блок */
+        padding: 1rem; /* Отступы */
+    } /* Конец .nav-list a */
+    .products-grid { /* Сетка товаров */
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Колонки */
+        gap: 1rem; /* Промежуток */
+    } /* Конец .products-grid */
+    .cart-table { /* Таблица корзины */
+        font-size: 0.85rem; /* Размер */
+    } /* Конец .cart-table */
+    .cart-table th,
+    .cart-table td { /* Ячейки */
+        padding: 0.5rem; /* Отступы */
+    } /* Конец ячеек */
+} /* Конец @media 768px */
+/* Пустая строка */
+@media (max-width: 480px) { /* До 480px */
+    .products-grid { /* Сетка товаров */
+        grid-template-columns: 1fr; /* Одна колонка */
+    } /* Конец .products-grid */
+    .content { /* Контент */
+        padding: 1rem; /* Отступы */
+    } /* Конец .content */
+    .sidebar { /* Боковая панель */
+        padding: 1rem; /* Отступы */
+    } /* Конец .sidebar */
+} /* Конец @media 480px */
+/* Стили для управления заказами (админ) */ /* Раздел заказов */
+.orders-admin-list { /* Список заказов */
+    display: flex; /* Флекс */
+    flex-direction: column; /* Колонка */
+    gap: 2rem; /* Промежуток */
+} /* Конец .orders-admin-list */
+/* Пустая строка */
+.order-admin-card { /* Карточка заказа */
+    background: var(--white); /* Фон */
+    border-radius: 8px; /* Скругление */
+    padding: 1.5rem; /* Отступы */
+    box-shadow: var(--shadow); /* Тень */
+} /* Конец .order-admin-card */
+/* Пустая строка */
+.order-admin-header { /* Шапка заказа */
+    display: flex; /* Флекс */
+    justify-content: space-between; /* Распределение */
+    align-items: center; /* Выравнивание */
+    margin-bottom: 1rem; /* Отступ снизу */
+    padding-bottom: 1rem; /* Отступ снизу */
+    border-bottom: 2px solid var(--border-color); /* Граница */
+} /* Конец .order-admin-header */
+/* Пустая строка */
+.order-admin-header h3 { /* Заголовок заказа */
+    color: var(--primary-color); /* Цвет */
+    font-size: 1.5rem; /* Размер */
+} /* Конец .order-admin-header h3 */
+/* Пустая строка */
+.order-admin-status { /* Блок статуса */
+    flex-shrink: 0; /* Не сжимать */
+} /* Конец .order-admin-status */
+/* Пустая строка */
+.order-status-select { /* Селект статуса */
+    padding: 0.5rem 1rem; /* Отступы */
+    border: 2px solid var(--border-color); /* Граница */
+    border-radius: 6px; /* Скругление */
+    font-size: 1rem; /* Размер */
+    font-weight: 600; /* Насыщенность */
+    cursor: pointer; /* Курсор */
+    transition: all 0.3s ease; /* Переход */
+} /* Конец .order-status-select */
+/* Пустая строка */
+.order-status-select:hover { /* Ховер селекта */
+    border-color: var(--primary-color); /* Цвет границы */
+} /* Конец .order-status-select:hover */
+/* Пустая строка */
+.status-new { /* Новый статус */
+    background-color: #dbeafe; /* Фон */
+    color: #1e40af; /* Цвет */
+} /* Конец .status-new */
+/* Пустая строка */
+.status-processing { /* В обработке */
+    background-color: #fef3c7; /* Фон */
+    color: #92400e; /* Цвет */
+} /* Конец .status-processing */
+/* Пустая строка */
+.status-confirmed { /* Подтвержден */
+    background-color: #d1fae5; /* Фон */
+    color: #065f46; /* Цвет */
+} /* Конец .status-confirmed */
+/* Пустая строка */
+.status-shipped { /* Отправлен */
+    background-color: #e0e7ff; /* Фон */
+    color: #3730a3; /* Цвет */
+} /* Конец .status-shipped */
+/* Пустая строка */
+.status-delivered { /* Доставлен */
+    background-color: #dcfce7; /* Фон */
+    color: #14532d; /* Цвет */
+} /* Конец .status-delivered */
+/* Пустая строка */
+.status-cancelled { /* Отменен */
+    background-color: #fee2e2; /* Фон */
+    color: #991b1b; /* Цвет */
+} /* Конец .status-cancelled */
+/* Пустая строка */
+.order-admin-info { /* Инфо заказа */
+    margin-bottom: 1rem; /* Отступ снизу */
+    display: flex; /* Флекс */
+    gap: 2rem; /* Промежуток */
+} /* Конец .order-admin-info */
+/* Пустая строка */
+.order-admin-info p { /* Параграфы */
+    margin: 0.3rem 0; /* Отступы */
+} /* Конец .order-admin-info p */
+/* Пустая строка */
+.order-customer-info { /* Инфо клиента */
+    background-color: var(--bg-color); /* Фон */
+    padding: 1rem; /* Отступы */
+    border-radius: 6px; /* Скругление */
+    margin-bottom: 1rem; /* Отступ снизу */
+} /* Конец .order-customer-info */
+/* Пустая строка */
+.order-customer-info h4 { /* Заголовок клиента */
+    margin-bottom: 0.5rem; /* Отступ снизу */
+    color: var(--primary-color); /* Цвет */
+} /* Конец .order-customer-info h4 */
+/* Пустая строка */
+.order-customer-info p { /* Параграф клиента */
+    margin: 0.3rem 0; /* Отступы */
+} /* Конец .order-customer-info p */
+/* Пустая строка */
+.order-items h4 { /* Заголовок товаров */
+    margin-bottom: 1rem; /* Отступ снизу */
+    color: var(--primary-color); /* Цвет */
+} /* Конец .order-items h4 */
+/* Пустая строка */
+.order-items-table { /* Таблица товаров */
+    width: 100%; /* Ширина */
+    border-collapse: collapse; /* Схлопывание */
+} /* Конец .order-items-table */
+/* Пустая строка */
+.order-items-table th,
+.order-items-table td { /* Ячейки таблицы */
+    padding: 0.75rem; /* Отступы */
+    text-align: left; /* Выравнивание */
+    border-bottom: 1px solid var(--border-color); /* Граница */
+} /* Конец ячеек */
+/* Пустая строка */
+.order-items-table thead { /* Заголовок таблицы */
+    background-color: var(--bg-color); /* Фон */
+} /* Конец .order-items-table thead */
+/* Пустая строка */
+.order-items-table tfoot { /* Итог таблицы */
+    font-weight: bold; /* Насыщенность */
+    background-color: var(--bg-color); /* Фон */
+} /* Конец .order-items-table tfoot */
+/* Пустая строка */
+/* Стили для управления складом */ /* Раздел склада */
+.stock-filters { /* Фильтры склада */
+    display: flex; /* Флекс */
+    gap: 2rem; /* Промежуток */
+    margin-bottom: 2rem; /* Отступ снизу */
+    background: var(--white); /* Фон */
+    padding: 1.5rem; /* Отступы */
+    border-radius: 8px; /* Скругление */
+    box-shadow: var(--shadow); /* Тень */
+} /* Конец .stock-filters */
+/* Пустая строка */
+.stock-filters label { /* Метка фильтра */
+    display: flex; /* Флекс */
+    flex-direction: column; /* Колонка */
+    gap: 0.5rem; /* Промежуток */
+    font-weight: 600; /* Насыщенность */
+} /* Конец .stock-filters label */
+/* Пустая строка */
+.stock-filters select { /* Селект фильтра */
+    padding: 0.5rem; /* Отступы */
+    border: 1px solid var(--border-color); /* Граница */
+    border-radius: 6px; /* Скругление */
+    font-size: 1rem; /* Размер */
+} /* Конец .stock-filters select */
+/* Пустая строка */
+.stock-table { /* Таблица склада */
+    width: 100%; /* Ширина */
+    border-collapse: collapse; /* Схлопывание */
+    background: var(--white); /* Фон */
+    border-radius: 8px; /* Скругление */
+    overflow: hidden; /* Скрытие */
+    box-shadow: var(--shadow); /* Тень */
+} /* Конец .stock-table */
+/* Пустая строка */
+.stock-table th,
+.stock-table td { /* Ячейки склада */
+    padding: 1rem; /* Отступы */
+    text-align: left; /* Выравнивание */
+    border-bottom: 1px solid var(--border-color); /* Граница */
+} /* Конец ячеек */
+/* Пустая строка */
+.stock-table thead { /* Заголовок склада */
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); /* Фон */
+    color: var(--white); /* Цвет */
+} /* Конец .stock-table thead */
+/* Пустая строка */
+.stock-table tbody tr:hover { /* Ховер строки */
+    background-color: var(--bg-color); /* Фон */
+} /* Конец .stock-table tbody tr:hover */
+/* Пустая строка */
+.stock-empty { /* Нет на складе */
+    color: var(--danger-color); /* Цвет */
+    font-weight: bold; /* Насыщенность */
+} /* Конец .stock-empty */
+/* Пустая строка */
+.stock-low { /* Мало на складе */
+    color: #f59e0b; /* Цвет */
+    font-weight: bold; /* Насыщенность */
+} /* Конец .stock-low */
+/* Пустая строка */
+.stock-medium { /* Средний уровень */
+    color: #3b82f6; /* Цвет */
+    font-weight: bold; /* Насыщенность */
+} /* Конец .stock-medium */
+/* Пустая строка */
+.stock-good { /* Достаточно */
+    color: var(--success-color); /* Цвет */
+    font-weight: bold; /* Насыщенность */
+} /* Конец .stock-good */
+/* Пустая строка */
+.stock-controls { /* Контролы склада */
+    display: flex; /* Флекс */
+    gap: 0.5rem; /* Промежуток */
+    align-items: center; /* Выравнивание */
+} /* Конец .stock-controls */
+/* Пустая строка */
+.stock-input { /* Поле ввода */
+    width: 70px; /* Ширина */
+    padding: 0.4rem; /* Отступы */
+    border: 1px solid var(--border-color); /* Граница */
+    border-radius: 4px; /* Скругление */
+    text-align: center; /* Выравнивание */
+    font-size: 1rem; /* Размер */
+} /* Конец .stock-input */
+/* Пустая строка */
+.stock-btn { /* Кнопка склада */
+    width: 32px; /* Ширина */
+    height: 32px; /* Высота */
+    border: none; /* Без границы */
+    background-color: var(--primary-color); /* Фон */
+    color: var(--white); /* Цвет */
+    border-radius: 4px; /* Скругление */
+    font-size: 1.2rem; /* Размер */
+    cursor: pointer; /* Курсор */
+    transition: all 0.3s ease; /* Переход */
+} /* Конец .stock-btn */
+/* Пустая строка */
+.stock-btn:hover { /* Ховер кнопки */
+    background-color: var(--secondary-color); /* Фон */
+    transform: scale(1.1); /* Увеличение */
+} /* Конец .stock-btn:hover */
+/* Пустая строка */
+.stock-btn-primary { /* Основная кнопка */
+    padding: 0.4rem 0.8rem; /* Отступы */
+    border: none; /* Без границы */
+    background-color: var(--success-color); /* Фон */
+    color: var(--white); /* Цвет */
+    border-radius: 4px; /* Скругление */
+    font-size: 0.9rem; /* Размер */
+    cursor: pointer; /* Курсор */
+    transition: all 0.3s ease; /* Переход */
+} /* Конец .stock-btn-primary */
+/* Пустая строка */
+.stock-btn-primary:hover { /* Ховер основной */
+    background-color: #15803d; /* Фон */
+} /* Конец .stock-btn-primary:hover */
+/* Пустая строка */
+/* Уведомления */ /* Раздел уведомлений */
+.notification { /* Уведомление */
+    position: fixed; /* Фиксация */
+    top: 100px; /* Смещение сверху */
+    right: 20px; /* Смещение справа */
+    background: var(--white); /* Фон */
+    padding: 1rem 1.5rem; /* Отступы */
+    border-radius: 8px; /* Скругление */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Тень */
+    z-index: 1000; /* Слой */
+    transform: translateX(400px); /* Скрытие */
+    transition: transform 0.3s ease; /* Переход */
+} /* Конец .notification */
+/* Пустая строка */
+.notification.show { /* Показ */
+    transform: translateX(0); /* Появление */
+} /* Конец .notification.show */
+/* Пустая строка */
+.notification.success { /* Успех */
+    border-left: 4px solid var(--success-color); /* Полоса */
+} /* Конец .notification.success */
+/* Пустая строка */
+.notification.error { /* Ошибка */
+    border-left: 4px solid var(--danger-color); /* Полоса */
+} /* Конец .notification.error */
+/* Конец файла */
+/* Конец файла. Без пустых строк */
+
+/*  Auth Modal  */
+.auth-overlay {
+  position: fixed; inset: 0; z-index: 9999;
+  background: rgba(0,0,0,.45);
+  display: none; align-items: center; justify-content: center;
+  padding: 1rem;
+}
+.auth-overlay[style*="flex"] { display: flex !important; }
+
+.auth-modal {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.25);
+  width: 100%; max-width: 400px;
+  padding: 1.75rem;
+  position: relative;
+}
+.auth-modal-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
+.auth-title { font-size: 1.1rem; font-weight: 700; margin: 0; }
+.auth-close { background: none; border: none; font-size: 1.3rem; cursor: pointer; color: #6b7280; padding: .2rem .4rem; border-radius: 4px; }
+.auth-close:hover { background: #f3f4f6; }
+
+.auth-tabs { display: flex; gap: .5rem; margin-bottom: 1.25rem; border-bottom: 2px solid #e5e7eb; }
+.auth-tab { background: none; border: none; padding: .5rem .9rem; font-size: .9rem; cursor: pointer; color: #6b7280; border-bottom: 2px solid transparent; margin-bottom: -2px; }
+.auth-tab:hover { color: #111827; }
+.auth-tab--active { color: #3b82f6; border-bottom-color: #3b82f6; font-weight: 600; }
+
+.auth-error   { background: #fee2e2; color: #dc2626; padding: .5rem .75rem; border-radius: 6px; font-size: .85rem; margin-bottom: .75rem; }
+.auth-success { background: #dcfce7; color: #16a34a; padding: .5rem .75rem; border-radius: 6px; font-size: .85rem; margin-bottom: .75rem; }
+
+.auth-form { display: flex; flex-direction: column; gap: .85rem; }
+.auth-label { display: flex; flex-direction: column; gap: .3rem; font-size: .85rem; font-weight: 500; }
+.auth-input {
+  width: 100%; padding: .5rem .75rem;
+  border: 1.5px solid #d1d5db; border-radius: 6px;
+  font-size: .95rem; box-sizing: border-box;
+}
+.auth-input:focus { outline: none; border-color: #3b82f6; }
+.auth-submit { width: 100%; margin-top: .25rem; padding: .6rem; font-size: 1rem; background: #3b82f6; color: #fff; border: none; border-radius: 6px; cursor: pointer; }
+.auth-submit:hover { background: #2563eb; }
+.auth-hint { font-size: .8rem; color: #6b7280; text-align: center; margin-top: .25rem; margin-bottom: 0; }
+.auth-link { color: #3b82f6; text-decoration: underline; cursor: pointer; }
+
+/* Nav auth button */
+.auth-nav-btn { background: none; border: 1.5px solid #3b82f6; border-radius: 6px; color: #3b82f6; padding: .25rem .65rem; font-size: .85rem; cursor: pointer; text-decoration: none; }
+.auth-nav-btn:hover { background: #eff6ff; }
+.auth-nav-user { font-weight: 600; font-size: .85rem; }
+.auth-nav-logout { font-size: .8rem; color: #6b7280; margin-left: .3rem; }
