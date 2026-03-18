@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет - TechStore</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo"><a href="index.html"><h1>TechStore</h1></a></div>
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">Каталог</a></li>
+                    <li><a href="favorites.html">Избранное <span class="badge" id="favCount">0</span></a></li>
+                    <li><a href="cart.html">Корзина <span class="badge" id="cartCount">0</span></a></li>
+                    <li><a href="profile.html" class="active">Личный кабинет</a></li>
+                    <li><a href="admin.html">Админ панель</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+            <button class="burger" id="burger"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+    
+    <main class="main">
+        <div class="container">
+            <div class="content-wrapper-full">
+                <div class="content">
+                    <h2>Личный кабинет</h2>
+                    
+                    <!-- Сообщение для неавторизованных пользователей -->
+                    <div class="unauth-message" id="unauthMessage" style="display: none;">
+                        <p>Для доступа к личному кабинету необходимо войти в систему</p>
+                        <button class="btn btn-primary" id="loginFromProfile">Войти</button>
+                    </div>
+                    
+                    <!-- Контент для авторизованных пользователей -->
+                    <div class="profile-content" id="profileContent" style="display: none;">
+                        <!-- Информация о пользователе -->
+                        <div class="profile-section user-info-section">
+                            <div class="user-avatar">
+                                <img src="https://via.placeholder.com/100" alt="Avatar" id="userAvatar">
+                            </div>
+                            <div class="user-details">
+                                <h3 id="userName">Имя пользователя</h3>
+                                <p id="userEmail">email@example.com</p>
+                                <p class="user-reg-date">Зарегистрирован: <span id="regDate">--.--.----</span></p>
+                                <button class="btn btn-secondary" id="logoutFromProfile">Выйти</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Табы для переключения разделов -->
+                        <div class="profile-tabs">
+                            <button class="tab-btn active" data-tab="orders">Мои заказы</button>
+                            <button class="tab-btn" data-tab="favorites">Избранное</button>
+                            <button class="tab-btn" data-tab="cart">Корзина</button>
+                        </div>
+                        
+                        <!-- Раздел "Мои заказы" -->
+                        <div class="profile-tab-content active" id="ordersTab">
+                            <h3>История заказов</h3>
+                            <div class="orders-list" id="ordersList">
+                                <!-- Заполняется динамически через profile.js -->
+                            </div>
+                        </div>
+                        
+                        <!-- Раздел "Избранное" -->
+                        <div class="profile-tab-content" id="favoritesTab">
+                            <h3>Избранные товары</h3>
+                            <div class="products-grid" id="profileFavoritesGrid"></div>
+                        </div>
+                        
+                        <!-- Раздел "Корзина" -->
+                        <div class="profile-tab-content" id="cartTab">
+                            <h3>Текущая корзина</h3>
+                            <div class="profile-cart" id="profileCartContent"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 TechStore. Все права защищены.</p>
+        </div>
+    </footer>
+    
+    <!-- Модальное окно для авторизации -->
+    <div class="modal" id="authModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <div id="authForms"></div>
+        </div>
+    </div>
+    
+    <script src="data.js"></script>
+    <script src="profile.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>
