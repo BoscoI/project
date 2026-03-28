@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Избранное - TechStore</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo"><a href="index.html"><h1>TechStore</h1></a></div>
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">Каталог</a></li>
+                    <li><a href="favorites.html" class="active">Избранное <span class="badge" id="favCount">0</span></a></li>
+                    <li><a href="cart.html">Корзина <span class="badge" id="cartCount">0</span></a></li>
+                    <li><a href="profile.html">Личный кабинет</a></li>
+                    <li><a href="admin.html">Админ панель</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+            <button class="burger" id="burger"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+    
+    <main class="main">
+        <div class="container">
+            <div class="content-wrapper-full">
+                <div class="content">
+                    <h2>Избранное</h2>
+                    
+                    <!-- Сообщение для неавторизованных пользователей -->
+                    <div class="auth-message" id="authMessage" style="display: none;">
+                        <p>Войдите, чтобы просматривать и управлять избранным</p>
+                        <button class="btn btn-primary" id="loginFromFavorites">Войти</button>
+                    </div>
+                    
+                    <!-- Сетка избранных товаров -->
+                    <div class="products-grid" id="favoritesGrid"></div>
+                    
+                    <p class="empty-message" id="emptyFavorites" style="display: none;">
+                        Список избранного пуст. Добавляйте товары в избранное на странице каталога!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 TechStore. Все права защищены.</p>
+        </div>
+    </footer>
+    
+    <!-- Модальное окно для авторизации -->
+    <div class="modal" id="authModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <div id="authForms"></div>
+        </div>
+    </div>
+    
+    <script src="data.js"></script>
+    <script src="favorites.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>
